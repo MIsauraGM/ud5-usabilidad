@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+/* No mostrar los encabezados y pies de impresión. */
+#print-head,
+#print-foot {
+  display: none;
+  }
