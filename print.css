@@ -4,6 +4,14 @@
     color: black;
   }
 
+  @page {
+    margin: 1cm;
+  }
+  
+  @page :first {
+    margin: 2cm;
+  }
+  
   h1 {
     page-break-before: always;
     padding-top: 2em;
