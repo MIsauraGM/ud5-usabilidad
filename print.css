@@ -4,6 +4,10 @@
     color: black;
   }
 
+  a {
+    display: block;
+  }
+
   a[href]:after {
      content: " (" attr(href) ")";
   }
@@ -17,14 +21,19 @@
   }
   
   h1 {
+    counter-increment: page;
     page-break-before: always;
     padding-top: 2em;
-    }
+  }
+
+  h1:after {
+    content: counter(page);
+  }
 
   h1:first-child {
     page-break-before: avoid;
     counter-reset: page;
-    }
+  }
 
   #print-head {
     display: block;
@@ -32,23 +41,18 @@
     top: 0pt;
     left:0pt;
     right: 0pt;
-
     font-size: 200%;
     text-align: center;
-    }
+  }
 
-  #print-foot {
+  span.pagina {
     display: block;
-    position: fixed;
-    bottom: 0pt;
-    right: 0pt;
+    position:relative;
+    top: 20cm;
+  }
 
-    font-size: 200%;
-    }
-
-  #print-foot:after {
+  span.pagina:after {
     content: counter(page);
-    counter-increment: page;
-    }
+  }
 
 } 
